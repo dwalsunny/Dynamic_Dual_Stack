@@ -1,7 +1,5 @@
 /*****************************************
- * UW User ID:  uwuserid
- * Submitted for ECE 250
- * Semester of Submission:  (Winter|Spring|Fall) 20NN
+ * UW User ID:  s24dhali
  *
  * By submitting this file, I affirm that
  * I am the author of all modifications to
@@ -17,7 +15,6 @@
 
 #include <algorithm>
 #include <cassert>
-#include "Exception.h"
 
 template <typename Type>
 class Dynamic_dual_stack {
@@ -45,8 +42,8 @@ class Dynamic_dual_stack {
 
 	// Friends
 
-	template <typename T>
-	friend std::ostream &operator<<( std::ostream &, Dynamic_dual_stack<T> const & );
+	/*template <typename T>
+	friend std::ostream &operator<<( std::ostream &, Dynamic_dual_stack<T> const & );*/
 };
 
 template <typename Type>
@@ -100,7 +97,7 @@ template <typename Type>
 bool Dynamic_dual_stack<Type>::empty( int m ) const {
     if(m != 0 && m != 1)
     {
-        throw illegal_argument();
+        throw;
     }
     
     
@@ -112,7 +109,7 @@ template <typename Type>
 int Dynamic_dual_stack<Type>::size( int m ) const {
 	if(m != 0 && m!= 1)
     {
-        throw illegal_argument();
+        throw;
     }
     
     
@@ -125,12 +122,12 @@ Type Dynamic_dual_stack<Type>::top( int m ) const {
     if(m != 0 && m!= 1)
     {
 //        throw underflow();
-        throw illegal_argument();
+        throw;
     }
     
     if(empty(m))
     {
-        throw underflow();
+        throw;
     }
     
     if(m == 0)
@@ -167,7 +164,7 @@ template <typename  Type>
 void Dynamic_dual_stack<Type>::push( int m, Type const &obj ) {
     if(m != 0 && m!= 1)
     {
-        throw illegal_argument();
+        throw;
     }
     
     // Checks if the array is full, if it is it creates a new array and copies over all the elements
@@ -211,13 +208,12 @@ template <typename  Type>
 Type Dynamic_dual_stack<Type>::pop( int m ) {
     if(m != 0 && m!= 1)
     {
-//        throw underflow();
-        throw illegal_argument();
+        throw;
     }
     
     if(empty(m))
     {
-        throw underflow();
+        throw;
     }
     
     Type popped = 0;
@@ -277,7 +273,7 @@ void Dynamic_dual_stack<Type>::clear() {
 
 // You can modify this function however you want:  it will not be tested
 
-template <typename T>
+/*template <typename T>
 std::ostream &operator<<( std::ostream &out, Dynamic_dual_stack<T> const &stack ) {
 	for ( int i = 0; i < stack.capacity(); ++i ) {
 		if ( i < stack.stack_size[0] ) {
@@ -291,7 +287,7 @@ std::ostream &operator<<( std::ostream &out, Dynamic_dual_stack<T> const &stack 
 
 	return out;
 }
-
+*/
 // Is an error showing up in ece250.h or elsewhere?
 // Did you forget a closing '}' ?
 
