@@ -17,7 +17,7 @@
 #include <cassert>
 
 template <typename Type>
-class Dynamic_dual_stack {
+class Dynamic_Dual_Stack {
 	private:
 		int initial_capacity;
 		int array_capacity;
